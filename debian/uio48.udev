@@ -1,0 +1,1 @@
+KERNEL=="uio48[a-d]", OWNER="ads", GROUP="eol"
