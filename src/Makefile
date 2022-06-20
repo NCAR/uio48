@@ -22,6 +22,14 @@ install:
 	install -c -m 0644 uio48.ko $(MODULE_INSTALLDIR)
 	/sbin/depmod -a
 
+modules modules_install::
+	$(RM) *.o.ur-safe
+	@$(MAKE) -C $(KERNELDIR) M=$$PWD $@
+
+clean:
+	$(RM) -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions /dev/uio48?
+	@$(MAKE) -C $(KERNELDIR) M=$$PWD $@
+
 uninstall:
 	rm -f $(MODULE_INSTALLDIR)uio48.ko
 	/sbin/depmod -a
@@ -36,8 +44,6 @@ poll:  poll.c uio48.h uio48io.o Makefile
 
 endif
  
-clean:
-	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions /dev/uio48?
 
 spotless:
 	rm -rf ioctl poll flash Module.* *.o *~ core .depend .*.cmd *.ko *.mod.c *.order .tmp_versions /dev/uio48?

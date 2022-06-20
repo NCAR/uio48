@@ -26,5 +26,5 @@ install:
 .PHONY: clean
 clean:
 	@echo "Clean uio48..."
-	$(MAKE) -C src clean
+	$(MAKE) -C src KERNELDIR=$(KERNELDIR) clean
 	# $(MAKE) -C utilities clean

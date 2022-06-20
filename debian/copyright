@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: uio48
-Source: <url://example.com>
+Source: https://github.com/NCAR/uio48.git
 
 Files: src/*
 Copyright: 2011, 2016 by WinSystems, Inc. Paul DeMetrotion <pdemetrotion@winsystems.com>
@@ -10,6 +10,7 @@ Files: debian/*
 Copyright: 2022, University Corporation for Atmospheric Research
 License: GPL-2.0+
 
+License:   GPL-2.0+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 2 of the License, or
