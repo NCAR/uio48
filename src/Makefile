@@ -4,7 +4,7 @@ ifneq ($(KERNELRELEASE),) # called by kbuild
 	obj-m := uio48.o
 else # called from command line
 	KERNEL_VERSION = `uname -r`
-	KERNELDIR := /lib/modules/$(KERNEL_VERSION)/build
+	KERNELDIR ?= /lib/modules/$(KERNEL_VERSION)/build
 	PWD  := $(shell pwd)
 	MODULE_INSTALLDIR = /lib/modules/$(KERNEL_VERSION)/kernel/drivers/gpio/
 

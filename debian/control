@@ -1,0 +1,16 @@
+Source: uio48
+Section: kernel
+Priority: optional
+Maintainer: maclean <maclean@ucar.edu>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: https://github.com/NCAR/uio48.git
+#Vcs-Git: https://anonscm.debian.org/git/collab-maint/uio48.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/uio48.git
+
+Package: uio48
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Kernel module and configuration for WinSystems uio48
+ Kernel module and configuration for WinSystems uio48
+
