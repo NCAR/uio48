@@ -21,6 +21,8 @@ install:
 	rm -f $(MODULE_INSTALLDIR)uio48.ko
 	install -c -m 0644 uio48.ko $(MODULE_INSTALLDIR)
 	/sbin/depmod -a
+	install -d $(DESTDIR)$(PREFIX)/include
+	install uio48.h $(DESTDIR)$(PREFIX)/include
 
 modules modules_install::
 	$(RM) *.o.ur-safe

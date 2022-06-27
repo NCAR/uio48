@@ -10,7 +10,13 @@ Homepage: https://github.com/NCAR/uio48.git
 
 Package: uio48
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends} ads-daq (>1.0-418)
+Depends: ${shlibs:Depends}, ${misc:Depends}, ads-daq(>> 1.0-418)
 Description: Kernel module and configuration for WinSystems uio48
  Kernel module and configuration for WinSystems uio48
+
+Package: uio48-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Header file for WinSystems uio48 ioctls
+ Header file for WinSystems uio48 ioctls
 
