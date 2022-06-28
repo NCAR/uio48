@@ -113,8 +113,7 @@ rm -f $(echo ../${pkg}\*_{$arch,all}.{deb,build,changes})
 
 # dpkg-source --commit . git-changes
 
-debuild $args \
-        --lintian-opts --suppress-tags dir-or-file-in-opt,package-modifies-ld.so-search-path,package-name-doesnt-match-sonames
+debuild $args 
 
 # debuild puts results in parent directory
 cd ..

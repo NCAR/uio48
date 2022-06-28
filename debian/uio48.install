@@ -1,0 +1,6 @@
+etc/modprobe.d/uio48.conf
+etc/modules-load.d/uio48.conf
+# For some reason must list lib/modules/* here apparently
+# because there are more than one packages in the control file
+lib/modules/*
+

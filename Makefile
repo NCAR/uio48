@@ -20,10 +20,10 @@ build:
 .PHONY: install
 install:
 	@echo "Installing uio48..."
-	$(MAKE) -C src KERNELDIR=$(KERNELDIR) INSTALL_MOD_PATH=$(DESTDIR) modules_install
+	$(MAKE) -C src KERNELDIR=$(KERNELDIR) DESTDIR=$(DESTDIR) INSTALL_MOD_PATH=$(DESTDIR) modules_install
 	$(MAKE) -C src DESTDIR=$(DESTDIR) PREFIX=$(PREFIX) install
 
 .PHONY: clean
 clean:
 	@echo "Clean uio48..."
-	$(MAKE) -C src KERNELDIR=$(KERNELDIR) clean
+	$(MAKE) -C src clean
