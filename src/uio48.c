@@ -13,6 +13,8 @@
 /* Helper to format our pr_* functions */
 #define pr_fmt(__fmt) KBUILD_MODNAME ": " __fmt
 
+// #define DEBUG    // enables pr_devel statements
+
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/device.h>
@@ -304,6 +306,7 @@ int init_module()
 		}
 
 		/* Check and map our I/O region requests. */
+                pr_devel("Requesting address %04X, len=%d\n", io[x], 0x10);
 		if (request_region(io[x], 0x10, KBUILD_MODNAME) == NULL) {
 			pr_err("Unable to use I/O Address %04X\n", io[x]);
 			cdev_del(&uiodev->cdev);

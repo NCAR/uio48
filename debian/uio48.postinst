@@ -27,6 +27,14 @@ case "$1" in
     configure)
         # start driver module
         # a comment
+
+        # clean out uio48 module entries in nidas.conf, ads.conf
+        cf=/etc/modprobe.d/nidas.conf
+        [ -f $cf ] && sed -i -r -e '/uio48/d' $cf
+
+        cf=/etc/modules-load.d/ads.conf
+        [ -f $cf ] && sed -i -r -e '/uio48/d' $cf
+
         lsmod | fgrep -q uio48 || modprobe uio48
     ;;
 
